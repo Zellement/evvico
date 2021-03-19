@@ -1,0 +1,48 @@
+/* ---------------------------------------------------
+Core
+--------------------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+body,
+html {
+  min-height: 101%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-base antialiased font-light leading-relaxed bg-black text-white;
+  scrollbar-width: thin;
+}
+
+/* Custom body scroll bars */
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: theme("colors.gray.700");
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: theme("colors.gray.700");
+  @apply rounded-full;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: theme("colors.black");
+  border: 1px solid theme("colors.gray.700");
+}
+
+/* Uses IntersectionObserver to identify when the viewport has scrolled, and then show back to top */
+
+#pixel-to-watch {
+  @apply absolute left-0;
+  width: 1px;
+  height: 1px;
+  top: 300px;
+}
+
+a {
+  @apply transition duration-300;
+}

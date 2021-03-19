@@ -1,0 +1,15 @@
+/* Core */
+@import '_core.css';
+
+/* Webfonts */
+@import '_fonts.css';
+
+/* Tailwind base/components */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Default Typography Styles */
+@import '_typography.css';
+
+/* Tailwind Utilities */
+@import 'tailwindcss/utilities';

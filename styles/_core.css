@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  @apply text-base antialiased font-light leading-relaxed bg-black text-white;
+  @apply text-base antialiased font-light leading-relaxed text-white bg-black;
   scrollbar-width: thin;
 }
 
@@ -32,6 +32,11 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: theme("colors.black");
   border: 1px solid theme("colors.gray.700");
+}
+
+.container {
+  @apply px-4 mx-auto;
+  max-width: theme("screens.2xl");
 }
 
 /* Uses IntersectionObserver to identify when the viewport has scrolled, and then show back to top */

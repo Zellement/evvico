@@ -63,7 +63,7 @@ export default function Header() {
             <Link href="/">
               <a
                 aria-label="Go to the homepage"
-                className="max-w-full mx-auto w-72 lg:w-84 xl:mx-0 xl:my-auto xl:w-96"
+                className="max-w-full mx-auto mt-8 w-72 lg:w-84 xl:mx-0 xl:my-auto xl:w-96"
               >
                 <Image
                   src="/evvico-logo.png"

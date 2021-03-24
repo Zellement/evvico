@@ -1,45 +1,113 @@
-import Head from 'next/head'
-import Layout from '../components/layout'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import FancyLink from '../components/fancyLink'
-import { fade } from "../helpers/transitions"
-import { motion } from 'framer-motion'
-import CardsChargingPoints from '../components/cards--charging-points'
+import { Image } from "react-datocms"
+import { request } from "../lib/datocms"
+import Fade from "react-reveal/Fade"
+import Slide from "react-reveal/Slide"
+import Head from "next/head"
+import Layout from "../components/layout"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import CardsChargingPoints from "../components/cards--charging-points"
+import Hero from "../components/hero"
 
-export default function Home() {
+const HOMEPAGE_QUERY = `
+  query MyQuery {
+    homepage {
+      heroPrimary
+      heroSecondary
+      heroImage {
+        responsiveImage(imgixParams: { fit: crop, w: 1600, h: 800, auto: format }) {
+          srcSet
+          webpSrcSet
+          sizes
+          src
+          width
+          height
+          aspectRatio
+          alt
+          title
+          base64
+        }
+      }
+      section1Copy
+      section1Strapline
+      section1Image {
+        responsiveImage(imgixParams: { fit: crop, w: 640, h: 343, auto: format }) {
+          srcSet
+          webpSrcSet
+          sizes
+          src
+          width
+          height
+          aspectRatio
+          alt
+          title
+          base64
+        }
+      }
+    }
+  }
+`
+
+export async function getStaticProps() {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+    variables: { limit: 10 },
+  })
+  return {
+    props: { data },
+  }
+}
+
+export default function Home({ data }) {
   return (
     <Layout>
       <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <title>Evvico - Electric Vehicle Chargers for home, workplace and public spaces</title>
-          <meta
+        <link rel="icon" href="/favicon.ico" />
+        <title>
+          Evvico - Electric Vehicle Chargers for home, workplace and public
+          spaces
+        </title>
+        <meta
           name="Electric Vehicle Chargers for home, workplace and public spaces"
           content="Electric Vehicle Chargers for home, workplace and public spaces"
-          />
-          <meta name="og:title" content="Website Title" />
-          <meta name="twitter:card" content="summary_large_image" />
+        />
+        <meta name="og:title" content="Website Title" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <Header />
 
-      <motion.div
-        initial="initial"
-        animate="enter"
-        exit="exit"
-        className="container mb-12 md:mb-16 xl:mb-24"
-      >
-          <motion.div variants={fade}>
-            <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Home Page</h1>
-            <div className="max-w-3xl mb-4 content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+      <Hero
+        heroPrimary={data.homepage.heroPrimary}
+        heroSecondary={data.homepage.heroSecondary}
+        heroImage={data.homepage.heroImage}
+      />
 
-              <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div className="container flex py-16 lg:py-32">
+        <div className="flex flex-col lg:flex-row xl:space-x-16">
+          <div className="flex flex-col lg:flex-row lg:w-1/2 xl:w-3/4">
+            <Slide left>
+              <div className="relative h-96 sm:h-[300px] md:h-[400px] lg:h-auto lg:w-full lg:h-auto bg-gray-100">
+                <Image
+                  data={data.homepage.section1Image.responsiveImage}
+                  lazyLoad="false"
+                  className="object-cover w-full h-full py-16"
+                  pictureClassName="object-cover w-full h-full lg:object-contain"
+                />
+              </div>
+            </Slide>
+            <div className="flex p-4 lg:w-2/3 lg:p-0 xl:w-2/5">
+              <div className="relative z-20 flex p-8 -mt-10 lg:m-0 lg:-ml-40 xl:-ml-96 xl:p-0">
+                <Slide right>
+                  <span className="relative z-20 text-2xl font-bold leading-tight text-blue-700 lg:my-auto xl:text-4xl xl:pl-20">{data.homepage.section1Strapline}</span>
+                </Slide>
+                <span className="absolute bottom-0 left-0 z-10 w-1/2 h-full bg-blue-100 lg:top-1/2 lg:-translate-y-1/2 transform lg:h-[80%] xl:w-2/3"></span>
+              </div>
             </div>
-            
-            <FancyLink destination="/about" a11yText="Navigate to the about page" label="About Page" />
-          </motion.div>
-      </motion.div>
+          </div>
+          <Fade><div className="p-4 content lg:w-1/2 lg:my-auto" dangerouslySetInnerHTML={{ __html: data.homepage.section1Copy }} /></Fade>
+        </div>
+      </div>
 
       <CardsChargingPoints />
 

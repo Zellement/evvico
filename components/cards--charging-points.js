@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function CardsChargingPoints() {
   return (
-    <ul className="container flex flex-col my-40 space-y-20 lg:flex-row lg:space-y-0 lg:space-x-4 xl:space-x-8">
+    <ul className="container flex flex-col py-16 space-y-20 lg:py-32 lg:flex-row lg:space-y-0 lg:space-x-4 xl:space-x-8">
       {/* Home */}
       <li className="flex lg:flex-1">
         <Link href="/home-ev-chargers">

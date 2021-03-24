@@ -5,16 +5,32 @@ body {
 .content > p {
   @apply mb-5;
 
+  &:first-of-type {
+    @apply text-lg;
+  }
+
   &:last-of-type {
     @apply mb-0;
   }
 }
 
 .content > p a {
-  @apply underline;
 
-  &:hover, &:focus {
-    @apply underline;
+  @apply relative text-blue-200;
+
+  &:after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-2/3 h-px transition-all duration-300 bg-blue-200;
+  }
+
+}
+
+.content > p a:hover {
+
+  @apply text-blue-500;
+
+  &:after {
+    @apply w-full bg-blue-500;
   }
 }
 

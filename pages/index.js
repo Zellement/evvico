@@ -6,8 +6,6 @@ import Head from "next/head"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import CardsChargingPoints from "../components/cards--charging-points"
-import Footer from "../components/footer"
-import Accreditations from "../components/accreditations"
 import Hero from "../components/hero"
 import { responsiveImageFragment } from "../lib/fragments";
 
@@ -70,7 +68,7 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   console.log(data)
   return (
-    <Layout>
+    <Layout accreditations={data.option.accreditations}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>
@@ -128,7 +126,7 @@ export default function Home({ data }) {
 
       <CardsChargingPoints />
 
-      <div className="container flex py-16 lg:py-32">
+      <div className="container flex py-16 lg:py-32 overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:space-x-16">
           <div className="flex flex-col lg:flex-row lg:w-1/2">
             <Slide left>
@@ -158,7 +156,7 @@ export default function Home({ data }) {
         </div>
       </div>
 
-      <div className="container flex py-16 lg:py-32">
+      <div className="container flex py-16 lg:py-32 overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:space-x-16">
           <Fade>
             <div className="flex flex-col p-4 content lg:w-1/2 lg:my-auto">
@@ -182,9 +180,6 @@ export default function Home({ data }) {
           </div>
         </div>
       </div>
-
-      <Accreditations content={data.option.accreditations} />
-      <Footer />
     </Layout>
   )
 }

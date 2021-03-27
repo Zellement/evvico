@@ -26,7 +26,7 @@ export default function Hero({ heroImage, heroPrimary, heroSecondary }) {
           <div className="flex p-4 md:p-0 md:mt-20 md:-mb-20 md:w-1/3 xl:w-2/5 ">
             <div className="relative w-full p-10 -mt-32 text-white bg-black md:m-0 xl:p-20 ">
               <Slide left>
-                <span className="block mb-10 text-3xl font-bold leading-tight bg-black md:-ml-40 md:p-12 md:text-4xl xl:text-5xl md:z-30 md:relative xl:p-20 xl:max-w-[700px]">
+                <span className="block mb-10 text-3xl font-bold leading-tight bg-black md:-ml-40 md:p-12 md:text-4xl xl:text-5xl xl:-ml-72 md:z-30 md:relative xl:p-20 xl:max-w-[700px]">
                   {heroPrimary}
                 </span>
               </Slide>

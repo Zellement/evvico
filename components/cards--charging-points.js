@@ -1,10 +1,11 @@
 import Link from "next/link"
+import Fade from "react-reveal/Fade"
 
 export default function CardsChargingPoints() {
   return (
     <ul className="container flex flex-col py-16 space-y-20 lg:py-32 lg:flex-row lg:space-y-0 lg:space-x-4 xl:space-x-8">
       {/* Home */}
-      <li className="flex lg:flex-1">
+      <Fade><li className="flex lg:flex-1">
         <Link href="/home-ev-chargers">
           <a className="relative block w-full p-8 py-12 text-white bg-black hover:bg-blue-500 focus:bg-blue-500 lg:px-8 md:px-16 lg:py-16 xl:px-16 xl:py-20 group">
             <svg
@@ -40,8 +41,10 @@ export default function CardsChargingPoints() {
           </a>
         </Link>
       </li>
+      </Fade>
       {/* Workplace */}
-      <li className="flex lg:flex-1">
+      <Fade delay={500}>
+        <li className="flex lg:flex-1">
         <Link href="/work-ev-chargers">
           <a className="relative block w-full p-8 py-12 text-white bg-black hover:bg-blue-500 focus:bg-blue-500 lg:px-8 md:px-16 lg:py-16 xl:px-16 xl:py-20 group">
             <svg
@@ -80,8 +83,9 @@ export default function CardsChargingPoints() {
           </a>
         </Link>
       </li>
+      </Fade>
       {/* Public Spaces */}
-      <li className="flex lg:flex-1">
+      <Fade delay={1000}><li className="flex lg:flex-1">
         <Link href="/public-ev-chargers">
           <a className="relative block w-full p-8 py-12 text-white bg-black lg:px-8 md:px-16 lg:py-16 xl:px-16 xl:py-20 group hover:bg-blue-500 focus:bg-blue-500">
             <svg
@@ -135,7 +139,7 @@ export default function CardsChargingPoints() {
             </span>
           </a>
         </Link>
-      </li>
+      </li></Fade>
     </ul>
   )
 }

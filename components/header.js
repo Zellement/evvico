@@ -77,7 +77,7 @@ export default function Header() {
             </Link>
             <div
               className={cn(
-                "absolute top-0 bg-black lg:bg-transparent lg:text-black text-white w-full h-screen overflow-y-auto z-30 p-8 text-lg transform transition-300 lg:left-auto lg:relative lg:top-auto lg:h-auto lg:p-0",
+                "fixed top-0 bg-black lg:bg-transparent lg:text-black text-white w-full h-screen overflow-y-auto z-30 p-8 text-lg transform transition-300 lg:left-auto lg:relative lg:top-auto lg:h-auto lg:p-0",
                 mobileMenuIsOpen ? `left-0` : `-left-full`
               )}
             >
@@ -159,7 +159,7 @@ export default function Header() {
             </div>
           </div>
       </header>
-      <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-between w-full text-white bg-black lg:hidden">
+      <div className="fixed bottom-0 left-0 z-40 flex flex-row items-center justify-between w-full text-white bg-black lg:hidden">
         <div className="flex flex-row px-2 space-x-1">
           <ReactCountryFlag
             alt="UK flag"

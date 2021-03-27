@@ -14,7 +14,7 @@ body {
   }
 }
 
-.content > p a {
+.content p a {
 
   @apply relative text-blue-200;
 
@@ -25,7 +25,7 @@ body {
 
 }
 
-.content > p a:hover {
+.content p a:hover {
 
   @apply text-blue-500;
 
@@ -39,7 +39,7 @@ body {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
-  @apply p-0 mb-6;
+  @apply p-0 mb-6 font-bold;
 }
   
 .content > h1, .content > .h1 {

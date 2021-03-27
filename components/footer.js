@@ -5,9 +5,9 @@ import ReactCountryFlag from "react-country-flag"
 
 export default function Footer() {
   return (
-    <footer className="py-8 text-base text-white bg-black lg:py-16">
+    <footer className="pt-8 pb-20 text-base text-white bg-black lg:py-16">
       <div className="container flex flex-col space-y-8">
-        <div className="flex items-center justify-center space-x-4 lg:justify-start">
+        <div className="flex items-center justify-start space-x-4">
           <div className="">
             <Email className="hover:text-blue-100 focus:text-blue-100" />
           </div>
@@ -53,7 +53,7 @@ export default function Footer() {
           277 6031 88
         </div>
         <div className="">
-          <a rel="noreferrer noopener" className="hover:text-blue-100 focus:text-blue-100" target="_blank" href="https://www.zellement.com">Web Design by Zellement</a>
+          <a rel="noreferrer noopener" aria-label="Go to Zellement.com in a new tab" className="opacity-50 hover:opacity-100 focus:opacity-100 hover:text-blue-100 focus:text-blue-100" target="_blank" href="https://www.zellement.com">Web Design by Zellement</a>
         </div>
       </div>
     </footer>

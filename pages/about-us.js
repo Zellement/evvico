@@ -10,7 +10,7 @@ import { responsiveImageFragment } from "../lib/fragments"
 import CardsChargingPoints from "../components/cards--charging-points"
 
 const ABOUT_US_QUERY = `
-  query HomeEvChargersQuery {
+  query AboutUsQuery {
     option {
       accreditations {
         id

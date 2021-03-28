@@ -13,7 +13,7 @@ export default function Hero({ heroImage, heroPrimary, heroSecondary }) {
       className="flex"
     >
       <motion.div variants={fade}>
-        <div className="relative flex flex-col mb-40 md:flex-row">
+        <div className="relative flex flex-col mb-16 lg:mb-40 md:flex-row">
           <div className="h-96 md:h-auto md:w-2/3 md:relative xl:w-3/5 xl:max-h-[500px]">
             <Image
               data={heroImage.responsiveImage}

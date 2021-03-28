@@ -130,7 +130,7 @@ export default function Home({ data }) {
         <div className="flex flex-col lg:flex-row lg:space-x-16">
           <div className="flex flex-col lg:flex-row lg:w-1/2">
             <Slide left>
-              <div className="relative h-96 sm:h-[300px] md:h-[400px] lg:w-full lg:h-auto ">
+              <div className="relative h-96 sm:h-[300px] md:h-[400px] lg:w-full lg:h-auto mb-8">
                 <Image
                   data={data.homepage.section2Image.responsiveImage}
                   lazyLoad="false"
@@ -168,7 +168,7 @@ export default function Home({ data }) {
           </Fade>
           <div className="flex flex-col order-first lg:flex-row lg:w-1/2 lg:order-last">
             <Slide right>
-              <div className="relative h-96 sm:h-[300px] md:h-[400px] lg:w-full lg:h-full ">
+              <div className="relative h-96 sm:h-[300px] md:h-[400px] lg:w-full lg:h-full mb-12">
                 <Image
                   data={data.homepage.section3Image.responsiveImage}
                   lazyLoad="false"

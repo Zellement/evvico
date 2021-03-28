@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade"
 
 export default function QuickLinks() {
   return (
-    <div className="flex w-full py-16 bg-blue-500 md:pt-0 mt-72">
+    <div className="flex w-full py-16 bg-blue-500 md:pt-0 md:mt-72">
       <div className="container flex">
         <ul className="flex flex-col gap-10 md:flex-row md:-mt-48">
           <Fade delay={250}><li className="flex flex-1">
@@ -14,7 +14,6 @@ export default function QuickLinks() {
               <a className="flex flex-col items-center justify-center flex-1 p-12 font-bold text-center bg-white border-8 border-blue-100 hover:border-blue-300 focus:border-blue-200 lg:px-16 xl:px-20">
                 <div className="mb-8 max-w-40">
                   <Image
-                    responsive
                     className=""
                     width="141"
                     height="142"

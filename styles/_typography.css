@@ -49,3 +49,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
 .content > h2, .content > .h2 {
   @apply text-3xl;
 }
+
+.content ul {
+  @apply my-8 flex flex-col space-y-4;
+  li {
+    background-image: url("/check.svg");
+    @apply bg-no-repeat bg-left pl-12;
+  }
+}

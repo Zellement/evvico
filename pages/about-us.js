@@ -81,8 +81,8 @@ export default function Home({ data }) {
                 {data.page.h1}
               </h1>
               <Slide left><div className="relative z-10 p-8 pl-10 mb-12 text-xl text-white bg-blue-500 lg:pl-20 lg:p-16 lg:-mr-48 electric-bg">
-                <div class="max-w-[600px]">{data.page.strapline}</div>
-                <div class="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
+                <div className="max-w-[600px]">{data.page.strapline}</div>
+                <div className="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
               </div></Slide>
               <div
               className="content"
@@ -90,7 +90,7 @@ export default function Home({ data }) {
               />
             </div>
           </Fade>
-          <div className="flex flex-col lg:flex-row lg:w-1/2 -z-10">
+          <div className="flex flex-col mt-8 lg:flex-row lg:w-1/2 -z-10">
             <Slide right>
               <div className="h-96 sm:h-[300px] lg:w-full lg:h-auto">
                 <Image

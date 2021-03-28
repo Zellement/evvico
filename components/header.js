@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
   return (
     <>
-      <div className="fixed top-0 left-0 z-40 hidden w-full p-4 text-white bg-black lg:block">
+      <div className="fixed top-0 left-0 z-50 hidden w-full p-4 text-white bg-black lg:block">
         <div className="container flex items-center justify-end space-x-4 xl:space-x-8">
           <div className="">
             <Email className="hover:text-blue-100 focus:text-blue-100"  />

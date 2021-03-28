@@ -2,7 +2,7 @@ import { Image } from "react-datocms"
 import { request } from "../lib/datocms"
 import Fade from "react-reveal/Fade"
 import Slide from "react-reveal/Slide"
-import Head from "next/head"
+import { NextSeo } from 'next-seo'
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Hero from "../components/hero"
@@ -21,6 +21,10 @@ const WORK_EV_CHARGES_QUERY = `
       }
     }
     page(filter: {slug: {eq: "work-ev-chargers"}}) {
+      seo {
+        description
+        title
+      }
       id
       heroImage {
         responsiveImage(imgixParams: { fit: crop, w: 1600, h: 800, auto: format }) {
@@ -54,19 +58,11 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   return (
     <Layout accreditations={data.option.accreditations}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>
-          Evvico - Electric Vehicle Chargers for home, workplace and public
-          spaces
-        </title>
-        <meta
-          name="Electric Vehicle Chargers for home, workplace and public spaces"
-          content="Electric Vehicle Chargers for home, workplace and public spaces"
-        />
-        <meta name="og:title" content="Website Title" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      
+      <NextSeo
+        title={data.page.seo.title + " | Evvico"}
+        description={data.page.seo.description}
+      />
 
       <Header />
 
@@ -83,7 +79,7 @@ export default function Home({ data }) {
               <h1 className="mb-12 leading-tight">
                 {data.page.h1}
               </h1>
-              <Slide left><div className="relative z-10 p-8 mb-12 text-xl text-white bg-blue-500 pl-10 lg:pl-20 lg:p-16 lg:-mr-48 electric-bg">
+              <Slide left><div className="relative z-10 p-8 pl-10 mb-12 text-xl text-white bg-blue-500 lg:pl-20 lg:p-16 lg:-mr-48 electric-bg">
                 <div class="max-w-[600px]">{data.page.strapline}</div>
                 <div class="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
               </div></Slide>

@@ -1,8 +1,8 @@
 import { Image } from "react-datocms"
 import { request } from "../lib/datocms"
+import { NextSeo } from 'next-seo'
 import Fade from "react-reveal/Fade"
 import Slide from "react-reveal/Slide"
-import Head from "next/head"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import CardsChargingPoints from "../components/cards--charging-points"
@@ -22,6 +22,10 @@ const HOMEPAGE_QUERY = `
       }
     }
     homepage {
+      seo {
+        description
+        title
+      }
       heroPrimary
       heroSecondary
       heroImage {
@@ -69,19 +73,11 @@ export default function Home({ data }) {
   console.log(data)
   return (
     <Layout accreditations={data.option.accreditations}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>
-          Evvico - Electric Vehicle Chargers for home, workplace and public
-          spaces
-        </title>
-        <meta
-          name="Electric Vehicle Chargers for home, workplace and public spaces"
-          content="Electric Vehicle Chargers for home, workplace and public spaces"
-        />
-        <meta name="og:title" content="Website Title" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+
+      <NextSeo
+        title={data.homepage.seo.title + " | Evvico"}
+        description={data.homepage.seo.description}
+      />
 
       <Header />
 
@@ -145,7 +141,7 @@ export default function Home({ data }) {
               <h1 className="mb-12 leading-tight">
                 {data.homepage.section2Header}
               </h1>
-              <Slide left><div className="relative z-10 p-8 mb-12 text-xl text-white bg-blue-500 pl-10 lg:pl-20 lg:p-16 lg:-ml-48 electric-bg">
+              <Slide left><div className="relative z-10 p-8 pl-10 mb-12 text-xl text-white bg-blue-500 lg:pl-20 lg:p-16 lg:-ml-48 electric-bg">
                 <div class="max-w-[600px]">{data.homepage.section2Strapline}</div>
                 <div class="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
               </div></Slide>

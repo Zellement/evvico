@@ -1,11 +1,9 @@
-import { Image } from "react-datocms"
 import { request } from "../lib/datocms"
 import Fade from "react-reveal/Fade"
-import Slide from "react-reveal/Slide"
 import { useState } from "react"
-import Head from "next/head"
 import Layout from "../components/layout"
 import Header from "../components/header"
+import { NextSeo } from 'next-seo'
 import Hero from "../components/hero"
 import { responsiveImageFragment } from "../lib/fragments"
 import CardsChargingPoints from "../components/cards--charging-points"
@@ -23,6 +21,10 @@ const FAQS_QUERY = `
       }
     }
     faq {
+      seo {
+        description
+        title
+      }
       heroImage {
         responsiveImage(imgixParams: { fit: crop, w: 1600, h: 800, auto: format }) {
           ...responsiveImageFragment
@@ -64,19 +66,11 @@ export default function Home({ data }) {
 
   return (
     <Layout accreditations={data.option.accreditations}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>
-          Evvico - Electric Vehicle Chargers for home, workplace and public
-          spaces
-        </title>
-        <meta
-          name="Electric Vehicle Chargers for home, workplace and public spaces"
-          content="Electric Vehicle Chargers for home, workplace and public spaces"
-        />
-        <meta name="og:title" content="Website Title" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+
+      <NextSeo
+        title={data.faq.seo.title + " | Evvico"}
+        description={data.faq.seo.description}
+      />
 
       <Header />
 

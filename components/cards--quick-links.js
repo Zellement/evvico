@@ -35,7 +35,7 @@ export default function QuickLinks() {
             </Link>
           </li></Fade>
           <Fade delay={750}><li className="flex flex-1">
-            <Link href="/faqs">
+            <Link href="/why-choose-us">
               <a className="flex flex-col items-center justify-center flex-1 p-12 font-bold text-center bg-white border-8 border-blue-100 hover:border-blue-300 focus:border-blue-200 lg:px-16 xl:px-20">
                 <div className="flex w-40 h-40 p-8 mb-8 bg-blue-500 rounded-full">
                   <MdStarBorder className="m-auto text-5xl text-white" />

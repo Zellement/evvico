@@ -1,6 +1,6 @@
 import Footer from "../components/footer"
 import Accreditations from "../components/accreditations"
-import QuickLinks from "./quick-links"
+import QuickLinks from "../components/cards--quick-links"
 
 export default function Layout({ children, accreditations }) {
   return (

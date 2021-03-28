@@ -126,7 +126,7 @@ export default function Home({ data }) {
 
       <CardsChargingPoints />
 
-      <div className="container flex py-16 lg:py-32 overflow-hidden">
+      <div className="container flex py-16 overflow-hidden lg:py-32">
         <div className="flex flex-col lg:flex-row lg:space-x-16">
           <div className="flex flex-col lg:flex-row lg:w-1/2">
             <Slide left>
@@ -156,7 +156,7 @@ export default function Home({ data }) {
         </div>
       </div>
 
-      <div className="container flex py-16 lg:py-32 overflow-hidden">
+      <div className="container flex py-16 overflow-hidden lg:py-32">
         <div className="flex flex-col lg:flex-row lg:space-x-16">
           <Fade>
             <div className="flex flex-col p-4 content lg:w-1/2 lg:my-auto">

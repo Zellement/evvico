@@ -7,9 +7,10 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import Hero from "../components/hero"
 import { responsiveImageFragment } from "../lib/fragments"
+import CardsChargingPoints from "../components/cards--charging-points"
 
-const WORK_EV_CHARGES_QUERY = `
-  query WorkEVChargersQuery {
+const ABOUT_US_QUERY = `
+  query HomeEvChargersQuery {
     option {
       accreditations {
         id
@@ -20,7 +21,7 @@ const WORK_EV_CHARGES_QUERY = `
         format
       }
     }
-    page(filter: {slug: {eq: "work-ev-chargers"}}) {
+    page(filter: {slug: {eq: "about-us"}}) {
       id
       heroImage {
         responsiveImage(imgixParams: { fit: crop, w: 1600, h: 800, auto: format }) {
@@ -44,7 +45,7 @@ const WORK_EV_CHARGES_QUERY = `
 
 export async function getStaticProps() {
   const data = await request({
-    query: WORK_EV_CHARGES_QUERY,
+    query: ABOUT_US_QUERY,
   })
   return {
     props: { data },
@@ -107,6 +108,8 @@ export default function Home({ data }) {
           </div>
         </div>
       </div>
+
+      <CardsChargingPoints />
       
     </Layout>
   )

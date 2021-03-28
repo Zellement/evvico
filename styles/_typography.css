@@ -57,3 +57,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
     @apply bg-no-repeat bg-left pl-12;
   }
 }
+
+.content blockquote {
+  @apply font-bold my-8 border-l-4 border-gray-200 pl-8;
+}

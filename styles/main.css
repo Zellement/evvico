@@ -13,3 +13,8 @@
 
 /* Tailwind Utilities */
 @import 'tailwindcss/utilities';
+
+.electric-bg {
+  background-image: url("/electric-bg.png");
+  @apply bg-right bg-no-repeat;
+}

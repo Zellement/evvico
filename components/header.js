@@ -1,3 +1,4 @@
+import FancyLink from "./fancyLink"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -77,7 +78,7 @@ export default function Header() {
             </Link>
             <div
               className={cn(
-                "fixed top-0 bg-black lg:bg-transparent lg:text-black text-white w-full h-screen overflow-y-auto z-30 p-8 text-lg transform transition-300 lg:left-auto lg:relative lg:top-auto lg:h-auto lg:p-0",
+                "fixed top-0 bg-black lg:bg-transparent lg:text-black text-white w-full h-screen overflow-y-auto z-40 p-8 text-lg transform transition-300 lg:left-auto lg:relative lg:top-auto lg:h-auto lg:p-0",
                 mobileMenuIsOpen ? `left-0` : `-left-full`
               )}
             >
@@ -90,69 +91,28 @@ export default function Header() {
               <nav>
                 <ul className="flex flex-col w-9/12 lg:w-auto lg:flex-row lg:justify-center xl:justify-end lg:space-x-6 xl:space-x-8 2xl:space-x-12">
                   <li className="lg:flex">
-                    <Link href="/">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        Home
-                      </a>
-                    </Link>
+                    <FancyLink destination="/" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" label="Home" />
                   </li>
                   <li className="lg:flex">
-                    <Link href="/home-ev-chargers">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        <span className="block text-sm text-blue-100 lg:text-blue">
-                          Charging Points
-                        </span>{" "}
-                        for the Home
-                      </a>
-                    </Link>
+                    <FancyLink destination="/home-ev-chargers" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" span="Charging Points" label="for the Home" />
                   </li>
                   <li className="lg:flex">
-                    <Link href="/work-ev-chargers">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        <span className="block text-sm text-blue-100 lg:text-blue">
-                          Charging Points
-                        </span>{" "}
-                        for the Workplace
-                      </a>
-                    </Link>
+                    <FancyLink destination="/work-ev-chargers" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" span="Charging Points" label="for the Workplace" />
                   </li>
                   <li className="lg:flex">
-                    <Link href="/public-ev-chargers">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        <span className="block text-sm text-blue-100 lg:text-blue">
-                          Charging Points
-                        </span>{" "}
-                        for Public Spaces
-                      </a>
-                    </Link>
+                    <FancyLink destination="/public-ev-chargers" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" span="Charging Points" label="for Public Spaces" />
                   </li>
                   <li className="lg:flex">
-                    <Link href="/faqs">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        FAQs
-                      </a>
-                    </Link>
+                    <FancyLink destination="/faqs" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" label="FAQs" />
                   </li>
                   <li className="lg:flex">
-                    <Link href="/why-choose-us">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        Why Choose Us?
-                      </a>
-                    </Link>
+                    <FancyLink destination="/why-choose-us" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" label="Why Choose Us?" />
                   </li>
                   <li className="lg:flex">
-                    <Link href="/about-us">
-                      <a className="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end">
-                        About Us
-                      </a>
-                    </Link>
+                    <FancyLink destination="/about-us" extraClasses="block py-3 leading-tight border-b border-gray-800 lg:flex lg:flex-col lg:border-white hover:border-blue lg:tracking-tight lg:self-end" label="About Us" />
                   </li>
                   <li className="mt-8 lg:flex">
-                    <Link href="/make-an-enquiry">
-                      <a className="block p-4 leading-tight text-black bg-blue-100 hover:bg-blue-700 lg:flex lg:flex-col lg:border-white lg:bg-blue lg:text-white hover:border-blue lg:tracking-tight lg:self-end">
-                        Make an Enquiry
-                      </a>
-                    </Link>
+                    <FancyLink destination="/make-an-enquiry" extraClasses="block p-4 leading-tight text-black bg-blue-100 lg:hover:bg-blue-700 lg:flex lg:flex-col lg:border-white lg:bg-blue lg:text-white lg:hover:border-blue lg:tracking-tight lg:self-end" label="Make an Enquiry" />
                   </li>
                 </ul>
               </nav>

@@ -83,8 +83,9 @@ export default function Home({ data }) {
               <h1 className="mb-12 leading-tight">
                 {data.page.h1}
               </h1>
-              <Slide left><div className="relative z-10 p-8 mb-12 text-xl text-white bg-blue-500 lg:p-16 lg:-mr-48">
+              <Slide left><div className="relative z-10 p-8 mb-12 text-xl text-white bg-blue-500 pl-10 lg:pl-20 lg:p-16 lg:-mr-48 electric-bg">
                 <div class="max-w-[600px]">{data.page.strapline}</div>
+                <div class="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
               </div></Slide>
               <div
               className="content"

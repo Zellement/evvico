@@ -142,8 +142,8 @@ export default function Home({ data }) {
                 {data.homepage.section2Header}
               </h1>
               <Slide right><div className="relative z-10 p-8 pl-10 mb-12 text-xl text-white bg-blue-500 lg:pl-20 lg:p-16 lg:-ml-48 electric-bg">
-                <div class="max-w-[600px]">{data.homepage.section2Strapline}</div>
-                <div class="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
+                <div className="max-w-[600px]">{data.homepage.section2Strapline}</div>
+                <div className="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
               </div></Slide>
               <div
                 dangerouslySetInnerHTML={{ __html: data.homepage.section2Copy }}

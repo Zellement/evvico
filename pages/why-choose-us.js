@@ -34,11 +34,11 @@ const WHY_CHOOSE_US_QUERY = `
         content
         title
         icon {
-          responsiveImage {
-            alt
-            base64
-            bgColor
-            title
+          url
+        }
+        backgroundImage {
+          responsiveImage(imgixParams: { w: 500, h: 500, auto: format }) {
+            ...responsiveImageFragment
           }
         }
       }
@@ -66,16 +66,20 @@ export default function Home({ data }) {
 
       <Header />
 
-      <div className="container flex flex-col space-y-16 lg:flex-row lg:space-x-16 lg:space-y-0">
+      <div className="container flex flex-col space-y-16 lg:mb-16 lg:flex-row lg:space-x-16 lg:space-y-0">
         <div className="flex flex-col flex-1 p-8 text-white bg-black lg:p-16">
-          <h1 className="block mb-10 text-3xl font-bold leading-tight md:text-4xl xl:text-5xl">{data.whyChoose.h1}</h1>
+          <h1 className="block mb-10 text-3xl font-bold leading-tight md:text-4xl xl:text-5xl">
+            {data.whyChoose.h1}
+          </h1>
           <div
-            className="text-blue-100 content"
+            className="text-lg text-blue-100 content"
             dangerouslySetInnerHTML={{ __html: data.whyChoose.heroList }}
           />
         </div>
         <div className="flex flex-col flex-1 p-8">
-          <p className="block leading-tight text-blue-500 text-l md:text-2xl xl:text-3xl">{data.whyChoose.contentStrapline}</p>
+          <p className="block leading-tight text-blue-500 text-l md:text-2xl xl:text-3xl">
+            {data.whyChoose.contentStrapline}
+          </p>
           <div
             className="content"
             dangerouslySetInnerHTML={{ __html: data.whyChoose.content }}
@@ -83,43 +87,44 @@ export default function Home({ data }) {
         </div>
       </div>
 
-      {/* <Hero
-        heroPrimary={data.whyChoose.heroPrimary}
-        heroSecondary={data.whyChoose.heroSecondary}
-        heroImage={data.whyChoose.heroImage}
-      /> */}
-
-      {/* <div className="container flex py-16 overflow-hidden lg:py-32">
-        <div className="flex flex-col lg:flex-row lg:space-x-16">
-          <Fade>
-            <div className="flex flex-col p-4 content lg:w-1/2 lg:my-auto">
-              <h1 className="mb-12 leading-tight">
-                {data.whyChoose.h1}
-              </h1>
-              <Slide left><div className="relative z-10 p-8 pl-10 mb-12 text-xl text-white bg-blue-500 lg:pl-20 lg:p-16 lg:-mr-48 electric-bg">
-                <div className="max-w-[600px]">{data.whyChoose.strapline}</div>
-                <div className="w-4 h-[80%] absolute top-1/2 transform -translate-y-1/2 left-0 bg-blue-200"></div>
-              </div></Slide>
-              <div
-              className="content"
-                dangerouslySetInnerHTML={{ __html: data.whyChoose.content }}
+      <div className="flex flex-col overflow-hidden ">
+        {data.whyChoose.reasons.map((item, key) => (
+          <div className={"relative border-b border-gray-200 " + (key == 0 ? "border-t" : null) }>
+            <div className="absolute top-0 left-0 w-1/2 h-full opacity-30">
+              <Image
+                data={item.backgroundImage.responsiveImage}
+                lazyLoad="true"
+                className="object-cover w-full h-full -z-20"
+                pictureClassName="object-cover w-full h-full"
               />
             </div>
-          </Fade>
-          <div className="flex flex-col mt-8 lg:flex-row lg:w-1/2 -z-10">
-            <Slide right>
-              <div className="h-96 sm:h-[300px] lg:w-full lg:h-auto">
-                <Image
-                  data={data.whyChoose.contentImage.responsiveImage}
-                  lazyLoad="false"
-                  className="object-cover w-full h-full"
-                  pictureClassName="object-cover w-full h-full lg:object-cover"
+            <div className="absolute top-0 left-0 w-1/2 h-full opacity-40 bg-gradient-to-b from-blue-100"></div>
+            <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-l from-white"></div>
+            <div
+              key={key}
+              className="container flex flex-col px-8 py-16 lg:flex-row lg:py-28"
+            >
+              <Fade>
+                <div className="relative flex flex-col items-center lg:w-1/2 lg:items-start lg:justify-center">
+                  <h2 className="p-4 mb-0 text-2xl leading-tight text-blue-600 lg:text-white lg:bg-black lg:text-4xl">
+                    {item.title}
+                  </h2>
+                  <div className="p-4 lg:bg-black">
+                    <img
+                      className="w-auto h-full max-h-12"
+                      src={item.icon.url}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="content lg:w-1/2"
+                  dangerouslySetInnerHTML={{ __html: item.content }}
                 />
-              </div>
-            </Slide>
+              </Fade>
+            </div>
           </div>
-        </div>
-      </div> */}
+        ))}
+      </div>
 
       <CardsChargingPoints />
     </Layout>

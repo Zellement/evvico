@@ -5,10 +5,19 @@ export default function ContactForm() {
         <h2 className="mb-16 text-2xl text-center text-blue-100 lg:text-4xl">Start your enquiry</h2>
 
         <form
+          netlify-honeypot="_gotcha" 
+          action="/thanks"
+          data-netlify="true"
           className="flex flex-wrap gap-8 lg:flex-row"
           name="contact"
           method="POST"
         >
+          <div className="hidden">
+            <label>
+              <span className="block">Do not fill out this field if you are human</span>
+              <input name="_gotcha" />
+            </label>
+          </div>
           <div className="flex flex-col flex-1 space-y-4">
             <label class="w-full p-1 flex flex-col space-y-1">
               <span className="block">Name</span>

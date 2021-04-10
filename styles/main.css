@@ -18,3 +18,34 @@
   background-image: url("/electric-bg.png");
   @apply bg-right bg-no-repeat;
 }
+
+body input {
+  @apply p-4 text-white bg-blue-500;
+}
+
+/* The below placeholder selectors don't work when comma separated */
+input::-webkit-input-placeholder {
+    @apply opacity-50 text-blue-50;
+}
+input::-ms-input-placeholder {
+    @apply opacity-50 text-blue-50;
+}
+input::-moz-placeholder {
+    @apply opacity-50 text-blue-50;
+}
+input::placeholder {
+    @apply opacity-50 text-blue-50;
+}
+
+textarea::-webkit-input-placeholder {
+    @apply opacity-50 text-blue-50;
+}
+textarea::-ms-input-placeholder {
+    @apply opacity-50 text-blue-50;
+}
+textarea::-moz-placeholder {
+    @apply opacity-50 text-blue-50;
+}
+textarea::placeholder {
+    @apply opacity-50 text-blue-50;
+}

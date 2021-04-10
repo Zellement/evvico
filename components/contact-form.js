@@ -1,8 +1,12 @@
+import Fade from "react-reveal/Fade"
+
 export default function ContactForm() {
   return (
     <div className="py-24 text-white bg-blue-600">
       <div className="container max-w-screen-lg">
         <h2 className="mb-16 text-2xl text-center text-blue-100 lg:text-4xl">Start your enquiry</h2>
+        
+        <Fade>
 
         <form
           netlify-honeypot="_gotcha" 
@@ -112,6 +116,9 @@ export default function ContactForm() {
             />
           </div>
         </form>
+
+        </Fade>
+        
       </div>
     </div>
   )

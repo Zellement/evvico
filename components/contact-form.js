@@ -9,7 +9,7 @@ export default function ContactForm() {
         <Fade>
 
         <form
-          netlify-honeypot="_gotcha" 
+          netlify-honeypot="avoid" 
           action="/thanks"
           data-netlify="true"
           className="flex flex-wrap gap-8 lg:flex-row"
@@ -20,7 +20,7 @@ export default function ContactForm() {
             <input type="hidden" name="form-name" value="contact" />
             <label>
               <span className="block">Do not fill out this field if you are human</span>
-              <input name="_gotcha" />
+              <input name="avoid" />
             </label>
           </div>
           <div className="flex flex-col flex-1 space-y-4">

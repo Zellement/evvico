@@ -17,6 +17,7 @@ export default function ContactForm() {
           method="POST"
         >
           <div className="hidden">
+            <input type="hidden" name="form-name" value="contact" />
             <label>
               <span className="block">Do not fill out this field if you are human</span>
               <input name="_gotcha" />

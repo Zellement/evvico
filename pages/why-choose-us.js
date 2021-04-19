@@ -89,7 +89,7 @@ export default function Home({ data }) {
 
       <div className="flex flex-col overflow-hidden ">
         {data.whyChoose.reasons.map((item, key) => (
-          <div className={"relative border-b border-gray-200 " + (key == 0 ? "border-t" : null) }>
+          <div key={key} className={"relative border-b border-gray-200 " + (key == 0 ? "border-t" : null) }>
             <div className="absolute top-0 left-0 w-1/2 h-full opacity-30">
               <Image
                 data={item.backgroundImage.responsiveImage}

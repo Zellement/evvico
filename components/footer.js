@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="pt-8 pb-20 text-base text-white bg-black lg:py-16">
       <div className="container flex flex-col space-y-8">
-        <div className="flex items-center justify-start space-x-4">
+        <div className="flex flex-col items-center justify-start space-x-4 space-y-2 md:space-y-0 md:flex-row">
           <div className="">
             <Email className="hover:text-blue-100 focus:text-blue-100" />
           </div>

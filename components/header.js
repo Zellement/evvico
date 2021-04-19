@@ -119,7 +119,7 @@ export default function Header() {
             </div>
           </div>
       </header>
-      <div className="fixed bottom-0 left-0 z-40 flex flex-row items-center justify-between w-full text-white bg-black lg:hidden">
+      <div className="fixed bottom-0 left-0 z-40 flex flex-row items-center justify-between w-full text-sm text-white bg-black lg:hidden">
         <div className="flex flex-row px-2 space-x-1">
           <ReactCountryFlag
             alt="UK flag"

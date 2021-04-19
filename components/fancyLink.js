@@ -6,7 +6,12 @@ export default function fancyLink( {destination, a11yText, label, extraClasses, 
   const router = useRouter()
 
   if (router.pathname === destination ){
-    extraClasses = `${extraClasses} text-blue-200`
+    if (router.pathname === "/make-an-enquiry" ){
+      extraClasses = `${extraClasses} bg-gradient-to-t from-blue-800 to-blue-900`
+    }
+    else {
+      extraClasses = `${extraClasses} text-blue-200`
+    }
   }
 
   return (

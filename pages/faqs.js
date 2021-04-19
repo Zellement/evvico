@@ -80,8 +80,6 @@ export default function Home({ data }) {
         heroImage={data.faq.heroImage}
       />
 
-      {console.log(toggleAllFaqs)}
-
       <div className="container flex max-w-screen-md py-16 overflow-hidden lg:py-32">
         <div className="flex flex-col w-full lg:flex-row lg:space-x-16">
           <Fade>

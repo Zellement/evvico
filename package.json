@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
@@ -16,6 +17,7 @@
     "graphql-request": "^3.4.0",
     "next": "10.0.8",
     "next-seo": "^4.23.0",
+    "next-sitemap": "^1.6.95",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.3",
     "postcss-preset-env": "^6.7.0",

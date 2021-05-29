@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="">
-          Evvico is a trading name of Effico Ltd., a registered company in
+          Evvico is a trading name of Effico Ltd, a registered company in
           England & Wales &bull; Registration Number 10890810 &bull; VAT Number
           277 6031 88
         </div>

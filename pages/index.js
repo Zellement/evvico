@@ -86,7 +86,7 @@ export default function Home({ data }) {
         heroImage={data.homepage.heroImage}
       />
 
-      <div className="container flex py-16 lg:py-32">
+      <div className="container flex py-16 overflow-hidden lg:py-32">
         <div className="flex flex-col lg:flex-row xl:space-x-16">
           <div className="flex flex-col lg:flex-row lg:w-1/2 xl:w-3/4">
             <Slide left>

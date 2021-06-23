@@ -1,6 +1,6 @@
 import FancyLink from "./fancyLink"
 import Link from "next/link"
-import Image from "next/image"
+import Logo from "../components/logo"
 
 import { useState } from "react"
 import cn from "classnames"
@@ -66,14 +66,7 @@ export default function Header() {
                 aria-label="Go to the homepage"
                 className="max-w-full mx-auto mt-8 w-72 lg:w-84 xl:mx-0 xl:my-auto xl:w-96"
               >
-                <Image
-                  src="/evvico-logo.png"
-                  width={700}
-                  height={226}
-                  quality={100}
-                  priority
-                  alt="Evvico Logo"
-                />
+                <Logo />
               </a>
             </Link>
             <div
